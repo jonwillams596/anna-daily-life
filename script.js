@@ -1,35 +1,27 @@
 
-const calendar = document.getElementById("calendar");
-const popup = document.getElementById("popup");
-const saveBtn = document.getElementById("saveBtn");
-const emojis = popup.querySelectorAll(".emojis span");
-const textarea = popup.querySelector("textarea");
+let selectedMood = "";
 
-let selectedDay = null;
+document.querySelectorAll(".mood").forEach(el => {
+    el.addEventListener("click", () => {
+        selectedMood = el.textContent;
+    });
+});
 
-// 创建简单的30天日历
-for (let i = 1; i <= 30; i++) {
-  const day = document.createElement("div");
-  day.className = "day";
-  day.innerText = i;
-  day.addEventListener("click", () => {
-    selectedDay = day;
-    popup.classList.remove("hidden");
-  });
-  calendar.appendChild(day);
+function saveMood() {
+    const note = document.getElementById("note").value;
+    if (selectedMood || note) {
+        const data = { mood: selectedMood, note: note };
+        localStorage.setItem("todayMood", JSON.stringify(data));
+        displayMood();
+    }
 }
 
-// 点击表情时标记在格子上
-emojis.forEach(emoji => {
-  emoji.addEventListener("click", () => {
-    if (selectedDay) {
-      selectedDay.innerText = selectedDay.innerText.split(" ")[0] + " " + emoji.innerText;
+function displayMood() {
+    const data = JSON.parse(localStorage.getItem("todayMood"));
+    if (data) {
+        document.getElementById("today-record").textContent =
+            `Mood: ${data.mood} | Note: ${data.note}`;
     }
-  });
-});
+}
 
-// 保存按钮点击事件
-saveBtn.addEventListener("click", () => {
-  popup.classList.add("hidden");
-  textarea.value = "";
-});
+window.onload = displayMood;

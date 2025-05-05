@@ -2,26 +2,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anna's Daily Life</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna’s Daily Life</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to Anna’s Daily Life</h1>
-  <p class="subtitle">This is your mood tracking and cute collection page!</p>
-  <h2>How are you feeling today?</h2>
-  <div id="calendar"></div>
-
-  <div id="popup" class="popup hidden">
-    <h3>Pick your mood</h3>
-    <div class="emojis">
-      <span>😊</span><span>😢</span><span>😡</span><span>😴</span><span>❤️</span>
+    <h1>Welcome to Anna’s Daily Life</h1>
+    <p>This is your mood tracking and cute collection page!</p>
+    <h2>How are you feeling today?</h2>
+    <p>Pick your mood</p>
+    <div id="mood-picker">
+        <span class="mood">😊</span>
+        <span class="mood">😢</span>
+        <span class="mood">😡</span>
+        <span class="mood">🥱</span>
+        <span class="mood">❤️</span>
     </div>
-    <textarea placeholder="Write a short note..."></textarea>
-    <button id="saveBtn">Save</button>
-  </div>
+    <textarea id="note" placeholder="Write a short note..."></textarea>
+    <button onclick="saveMood()">Save</button>
 
-  <script src="script.js"></script>
+    <h3>Today’s Record</h3>
+    <div id="today-record"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
