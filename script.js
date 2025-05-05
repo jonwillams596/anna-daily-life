@@ -1,16 +1,27 @@
 
-function saveNote() {
-    const note = document.querySelector("textarea").value;
-    const moodResponse = getRandomResponse();
-    alert(moodResponse + "\nYou wrote: " + note);
+function createCalendar() {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = today.getMonth();
+
+  const firstDay = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const calendar = document.getElementById("calendar-grid");
+
+  calendar.innerHTML = "";
+
+  for (let i = 0; i < firstDay; i++) {
+    const emptyCell = document.createElement("div");
+    calendar.appendChild(emptyCell);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dayCell = document.createElement("div");
+    dayCell.className = "calendar-day";
+    dayCell.textContent = day;
+
+    calendar.appendChild(dayCell);
+  }
 }
-function getRandomResponse() {
-    const responses = [
-        "Aww baby, you did so well today!",
-        "Sending kisses and sparkles!",
-        "You’re my sunshine, even on cloudy days.",
-        "Let’s cuddle and forget all worries.",
-        "Time to relax, you earned it, baby."
-    ];
-    return responses[Math.floor(Math.random() * responses.length)];
-}
+
+createCalendar();
