@@ -1,27 +1,35 @@
 
-function createCalendar() {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
+const calendar = document.getElementById("calendar");
+const popup = document.getElementById("popup");
+const saveBtn = document.getElementById("saveBtn");
+const emojis = popup.querySelectorAll(".emojis span");
+const textarea = popup.querySelector("textarea");
 
-  const firstDay = new Date(year, month, 1).getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const calendar = document.getElementById("calendar-grid");
+let selectedDay = null;
 
-  calendar.innerHTML = "";
-
-  for (let i = 0; i < firstDay; i++) {
-    const emptyCell = document.createElement("div");
-    calendar.appendChild(emptyCell);
-  }
-
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dayCell = document.createElement("div");
-    dayCell.className = "calendar-day";
-    dayCell.textContent = day;
-
-    calendar.appendChild(dayCell);
-  }
+// 创建简单的30天日历
+for (let i = 1; i <= 30; i++) {
+  const day = document.createElement("div");
+  day.className = "day";
+  day.innerText = i;
+  day.addEventListener("click", () => {
+    selectedDay = day;
+    popup.classList.remove("hidden");
+  });
+  calendar.appendChild(day);
 }
 
-createCalendar();
+// 点击表情时标记在格子上
+emojis.forEach(emoji => {
+  emoji.addEventListener("click", () => {
+    if (selectedDay) {
+      selectedDay.innerText = selectedDay.innerText.split(" ")[0] + " " + emoji.innerText;
+    }
+  });
+});
+
+// 保存按钮点击事件
+saveBtn.addEventListener("click", () => {
+  popup.classList.add("hidden");
+  textarea.value = "";
+});
