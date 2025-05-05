@@ -30,11 +30,12 @@ textarea {
 .cat {
   position: absolute;
   top: -80px;
-  left: 0;
-  width: 70px;
-  height: 70px;
-  background-image: url('g_cat.gif');
+  left: 100px;
+  width: 80px;
+  height: 80px;
+  background-image: url('cat-idle.gif'); /* 默认眨眼图 */
   background-size: contain;
   background-repeat: no-repeat;
   transition: left 0.2s ease-in-out;
+  z-index: 10;
 }
