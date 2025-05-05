@@ -1,27 +1,26 @@
-let selectedEmoji = '';
-const emojiButtons = document.querySelectorAll('.emoji-btn');
-const saveBtn = document.getElementById('saveBtn');
-const noteInput = document.getElementById('noteInput');
-const output = document.getElementById('output');
 
-emojiButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        emojiButtons.forEach(btn => btn.classList.remove('selected'));
-        button.classList.add('selected');
-        selectedEmoji = button.textContent;
+document.addEventListener("DOMContentLoaded", function () {
+  const moodElements = document.querySelectorAll(".mood");
+  const selectedMoodBox = document.getElementById("selected-mood-box");
+  const saveButton = document.getElementById("save");
+  const noteInput = document.getElementById("note");
+  const record = document.getElementById("record");
+
+  let selectedMood = "";
+
+  moodElements.forEach((mood) => {
+    mood.addEventListener("click", () => {
+      selectedMood = mood.getAttribute("data-mood");
+      selectedMoodBox.textContent = selectedMood;
     });
-});
+  });
 
-saveBtn.addEventListener('click', () => {
-    const note = noteInput.value.trim();
-    if (!selectedEmoji || !note) {
-        alert("Please select a mood and write a note!");
-        return;
+  saveButton.addEventListener("click", () => {
+    const note = noteInput.value;
+    if (selectedMood && note) {
+      record.textContent = `Mood: ${selectedMood} | Note: ${note}`;
+    } else {
+      alert("Please select a mood and enter a note!");
     }
-    const record = document.createElement('p');
-    record.innerHTML = `Today you feel <strong>${selectedEmoji}</strong> and wrote: "${note}"`;
-    output.prepend(record);
-    noteInput.value = '';
-    emojiButtons.forEach(btn => btn.classList.remove('selected'));
-    selectedEmoji = '';
+  });
 });
