@@ -1,30 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anna’s Daily Life</title>
+    <title>Anna's Daily Life</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Welcome to Anna’s Daily Life</h1>
+    <h1>Welcome to <span class="highlight">Anna’s Daily Life</span></h1>
     <p>This is your mood tracking and cute collection page!</p>
     <h2>How are you feeling today?</h2>
     <p>Pick your mood</p>
-    <div id="mood-picker">
-        <span class="mood">😊</span>
-        <span class="mood">😢</span>
-        <span class="mood">😡</span>
-        <span class="mood">🥱</span>
-        <span class="mood">❤️</span>
+    <div class="emoji-picker" id="emojiPicker">
+        <button class="emoji-btn">😊</button>
+        <button class="emoji-btn">😢</button>
+        <button class="emoji-btn">😡</button>
+        <button class="emoji-btn">😴</button>
+        <button class="emoji-btn">❤️</button>
     </div>
-    <textarea id="note" placeholder="Write a short note..."></textarea>
-    <button onclick="saveMood()">Save</button>
-
-    <h3>Today’s Record</h3>
-    <div id="today-record"></div>
-
+    <input type="text" id="noteInput" placeholder="Write a short note..." />
+    <button id="saveBtn">Save</button>
+    <div id="output"></div>
     <script src="script.js"></script>
 </body>
 </html>
