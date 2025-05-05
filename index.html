@@ -3,81 +3,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anna’s Daily Life</title>
-  <style>
-    body {
-      background-color: #fddde6;
-      font-family: 'Segoe UI', cursive;
-      text-align: center;
-      padding: 30px;
-    }
-    .input-container {
-      position: relative;
-      display: inline-block;
-      margin-top: 100px;
-    }
-    #noteInput {
-      padding: 10px;
-      border: 2px solid #fff;
-      border-radius: 10px;
-      width: 250px;
-    }
-    #cat {
-      position: absolute;
-      top: -80px;
-      left: 0;
-      height: 60px;
-      transition: all 0.5s ease;
-    }
-    @keyframes walk {
-      0% { left: 0; }
-      50% { left: 50%; }
-      100% { left: 0; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Welcome to Anna’s Daily Life!</h1>
-  <div class="input-container">
-    <img id="cat" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3J1ZGN2cHM0ejBqbnU5bXBndWszcDNxMHJzM3RqaDZ2cHdybHd5diZlcD12MV9naWZzX3NlYXJjaCZjdD1n/2yrRkTc1xUQXu/giphy.gif" alt="Cat G" />
-    <input id="noteInput" placeholder="Type here..." />
+  <div class="input-area">
+    <textarea placeholder="How are you feeling today?"></textarea>
+    <div class="cat" id="cat"></div>
   </div>
-
-  <script>
-    const cat = document.getElementById('cat');
-    const input = document.getElementById('noteInput');
-
-    function walkAnimation() {
-      cat.style.animation = 'walk 5s infinite';
-    }
-
-    function layDownAnimation() {
-      cat.style.animation = 'none';
-      cat.src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnlxN2tnM2M4dDdjaHN1N2V5YXVobWxmY3o4ejJoZXRsYXN5Y3pxNiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/ES4Vcv8zWfIt2/giphy.gif'; // 小猫趴着
-    }
-
-    function blinkAnimation() {
-      cat.src = 'https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbTNkZTVvZmI2aTVqcnQ4eGI5ZXp0dWZqMndrcHRqdmFxaHJndWsyYyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/F9hQLAVhWnL56/giphy.gif';
-    }
-
-    input.addEventListener('focus', () => {
-      layDownAnimation();
-    });
-
-    input.addEventListener('input', () => {
-      if (input.value.trim() === "") {
-        walkAnimation();
-      } else {
-        blinkAnimation();
-      }
-    });
-
-    input.addEventListener('blur', () => {
-      walkAnimation();
-    });
-
-    walkAnimation();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
