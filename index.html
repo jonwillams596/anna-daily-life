@@ -1,1 +1,87 @@
-<!DOCTYPE html><html><head><title>Anna’s Daily Life</title></head><body><h1>Welcome to Anna’s Daily Life!</h1></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anna's Daily Life</title>
+    <style>
+        body {
+            background-color: #ffe6f0;
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+        .page-section {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .navbar button {
+            background-color: #ffb6c1;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('calendar')">Calendar</button>
+        <button onclick="showSection('lottery')">Lottery</button>
+    </div>
+
+    <div id="home" class="page-section active">
+        <h1>Welcome to Anna’s Daily Life!</h1>
+        <p>This is your mood tracking and cute collection page!</p>
+        <p>How are you feeling today?</p>
+        <div>
+            <button onclick="selectMood('😊')">😊</button>
+            <button onclick="selectMood('😭')">😭</button>
+            <button onclick="selectMood('😡')">😡</button>
+            <button onclick="selectMood('🥱')">🥱</button>
+            <button onclick="selectMood('❤️')">❤️</button>
+        </div>
+        <div id="moodDisplay" style="margin-top: 10px; font-size: 24px;"></div>
+        <textarea id="note" placeholder="写点什么吧~" style="margin-top: 20px; width: 300px; height: 50px;"></textarea><br>
+        <button onclick="saveNote()">Save</button>
+        <div id="record" style="margin-top: 20px; font-size: 18px;"></div>
+    </div>
+
+    <div id="calendar" class="page-section">
+        <h2>Calendar View</h2>
+        <p>[这里会显示日历内容]</p>
+    </div>
+
+    <div id="lottery" class="page-section">
+        <h2>Lottery Page</h2>
+        <p>[这里会是抽奖内容]</p>
+    </div>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        let selectedMood = '';
+        function selectMood(mood) {
+            selectedMood = mood;
+            document.getElementById('moodDisplay').textContent = 'Selected Mood: ' + mood;
+        }
+
+        function saveNote() {
+            const note = document.getElementById('note').value;
+            document.getElementById('record').textContent = 'Mood: ' + selectedMood + ' | Note: ' + note;
+        }
+    </script>
+</body>
+</html>
