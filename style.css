@@ -2,16 +2,7 @@
 body {
     background-color: #ffe6f0;
     font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff66a3;
     text-align: center;
-    color: #333;
-}
-header {
-    background-color: #ffb6c1;
-    padding: 1em;
-}
-.calendar {
-    margin-top: 20px;
-}
-.note-popup {
-    margin-top: 20px;
+    padding: 20px;
 }
