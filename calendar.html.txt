@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anna's Mood Calendar</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 30px;
+            color: #ff66a3;
+            font-size: 35px;
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        td {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ff99cc;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        .note-box {
+            margin-top: 20px;
+        }
+        .cat {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anna’s Mood Calendar</h1>
+    <table>
+        <tr>
+            <td>😊</td><td>😢</td><td>😡</td><td>🥰</td><td>😴</td><td>🤔</td><td>🎉</td>
+        </tr>
+        <tr>
+            <td>😊</td><td>😢</td><td>😡</td><td>🥰</td><td>😴</td><td>🤔</td><td>🎉</td>
+        </tr>
+        <tr>
+            <td>😊</td><td>😢</td><td>😡</td><td>🥰</td><td>😴</td><td>🤔</td><td>🎉</td>
+        </tr>
+        <tr>
+            <td>😊</td><td>😢</td><td>😡</td><td>🥰</td><td>😴</td><td>🤔</td><td>🎉</td>
+        </tr>
+    </table>
+
+    <div class="note-box">
+        <input type="text" placeholder="Write your note here..." style="padding: 10px; width: 250px; border: 2px solid #ff99cc; border-radius: 10px;">
+    </div>
+
+    <img class="cat" src="cat_walk.gif" alt="walking cat">
+</body>
+</html>

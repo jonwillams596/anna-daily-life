@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anna's Daily Life</title>
+    <style>
+        body {
+            background-color: #ffcce6;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 50px;
+            color: #ff66a3;
+            font-size: 40px;
+        }
+        .button {
+            display: inline-block;
+            margin: 20px;
+            padding: 15px 30px;
+            background-color: #ff99cc;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #ff66a3;
+        }
+        .cat {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Anna’s Daily Life</h1>
+
+    <a class="button" href="calendar.html">Go to Mood Calendar</a>
+    <a class="button" href="lottery.html">Go to Lottery</a>
+    <a class="button" href="collection.html">Go to My Collection</a>
+
+    <img class="cat" src="cat_walk.gif" alt="walking cat">
+</body>
+</html>

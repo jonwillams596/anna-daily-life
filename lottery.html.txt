@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anna's Summer Dream Lottery</title>
+    <style>
+        body {
+            background-color: #ffe6f2;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin-top: 30px;
+            color: #ff66a3;
+            font-size: 35px;
+        }
+        .lottery-box {
+            margin: 30px auto;
+            padding: 20px;
+            width: 300px;
+            background-color: #fff0f5;
+            border: 2px dashed #ff99cc;
+            border-radius: 15px;
+        }
+        .draw-button {
+            padding: 10px 20px;
+            background-color: #ff99cc;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .draw-button:hover {
+            background-color: #ff66a3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #ff66a3;
+        }
+        .cat {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            width: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Anna's Summer Dream Lottery</h1>
+    <div class="lottery-box">
+        <button class="draw-button" onclick="drawCharacter()">Draw a Cute Character!</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <img class="cat" src="cat_walk.gif" alt="walking cat">
+
+    <script>
+        const characters = [
+            "Q-style Ariel", "Q-style Belle", "Q-style Nick Wilde", 
+            "Q-style Judy Hopps", "Teddy Bear", "Candy", "Ice Cream", "Cake"
+        ];
+
+        function drawCharacter() {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            const result = characters[randomIndex];
+            document.getElementById('result').innerText = "You got: " + result + "!";
+        }
+    </script>
+</body>
+</html>
