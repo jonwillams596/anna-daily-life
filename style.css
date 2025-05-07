@@ -31,14 +31,21 @@ h1 {
 .cat {
     width: 100px;
     position: absolute;
-    bottom: 0;
     left: 0;
-    animation: walkCycle 10s infinite linear;
+    bottom: 20%;
+    animation: jumpAround 15s infinite linear;
 }
 
-@keyframes walkCycle {
-    0% { left: 0; }
-    25% { left: 40%; }
-    50% { left: 80%; }
-    100% { left: 0; }
+@keyframes jumpAround {
+    0%   { left: 0; bottom: 20%; }
+    10%  { left: 20%; bottom: 40%; }
+    20%  { left: 40%; bottom: 60%; }
+    30%  { left: 60%; bottom: 50%; }
+    40%  { left: 80%; bottom: 30%; }
+    50%  { left: 60%; bottom: 10%; }
+    60%  { left: 40%; bottom: 30%; }
+    70%  { left: 20%; bottom: 50%; }
+    80%  { left: 40%; bottom: 70%; }
+    90%  { left: 60%; bottom: 40%; }
+    100% { left: 0; bottom: 20%; }
 }
