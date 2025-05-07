@@ -1,0 +1,40 @@
+
+body {
+    background-color: #ffe6f2;
+    font-family: 'Comic Sans MS', cursive;
+    text-align: center;
+    padding: 50px;
+}
+
+.container {
+    position: relative;
+    display: inline-block;
+}
+
+h1 {
+    color: #ff66a3;
+    margin-bottom: 20px;
+}
+
+.cat-container {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#cat {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s ease;
+}
+
+input {
+    margin-top: 20px;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #ff99cc;
+    border-radius: 10px;
+}
