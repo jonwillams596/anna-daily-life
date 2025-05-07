@@ -1,0 +1,1 @@
+document.querySelector('.cat').addEventListener('click', () => alert('Meow! I am G the cat!'));
